@@ -3,7 +3,7 @@ FROM public.ecr.aws/docker/library/maven:3.9-amazoncorretto-17 as build
 WORKDIR /app
 COPY pom.xml ./
 COPY src ./src
-RUN mvn package
+RUN mvn package -q
 # FROM base as development
 # CMD ["./mvnw", "spring-boot:run", "-Dspring-boot.run.profiles=mysql", "-Dspring-boot.run.jvmArguments='-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000'"]
 
