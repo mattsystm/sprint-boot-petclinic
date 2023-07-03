@@ -1,6 +1,6 @@
 
 
-## Containerising Pet Clinic app using Docker
+## Containerising Pet Clinic app using Docker 
 
 This is a [dockerized version of the original app](https://github.com/spring-projects/spring-petclinic) published by Spring Boot community. 
 
