@@ -1,0 +1,56 @@
+{
+    "taskDefinition": {
+        "taskDefinitionArn": "arn:aws:ecs:us-west-2:119165668786:task-definition/ecsdemo-frontend:3",
+        "containerDefinitions": [
+            {
+                "name": "ecsdemo-frontend",
+                "image": "public.ecr.aws/aws-containers/ecsdemo-frontend",
+                "cpu": 0,
+                "portMappings": [
+                    {
+                        "containerPort": 3000,
+                        "hostPort": 3000,
+                        "protocol": "tcp"
+                    }
+                ],
+                "essential": true,
+                "environment": [
+                    {
+                        "name": "TEST_VAR",
+                        "value": "testValue"
+                    }
+                ],
+                "startTimeout": 30,
+                "stopTimeout": 120,
+                "logConfiguration": {
+                    "logDriver": "awslogs",
+                    "options": {
+                        "awslogs-group": "/aws/ecs/ecsdemo-frontend/ecsdemo-frontend",
+                        "awslogs-region": "us-west-2",
+                        "awslogs-stream-prefix": "ecs"
+                    }
+                }
+            }
+        ],
+        "family": "ecsdemo-frontend",
+        "taskRoleArn": "arn:aws:iam::119165668786:role/ecsdemo-frontend-20230704030538376300000003",
+        "executionRoleArn": "arn:aws:iam::119165668786:role/ecsdemo-frontend-20230704030538377200000006",
+        "networkMode": "awsvpc",
+        "revision": 3,
+        "volumes": [],
+        "status": "ACTIVE",
+        "compatibilities": [
+            "FARGATE"
+        ],
+        "runtimePlatform": {
+            "cpuArchitecture": "X86_64",
+            "operatingSystemFamily": "LINUX"
+        },
+        "requiresCompatibilities": [
+            "FARGATE"
+        ],
+        "cpu": "1024",
+        "memory": "2048",
+    },
+    "tags": []
+}
