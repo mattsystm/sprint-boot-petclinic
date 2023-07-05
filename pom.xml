@@ -110,6 +110,11 @@
       <artifactId>spring-boot-devtools</artifactId>
       <optional>true</optional>
     </dependency>
+    <dependency>
+        <groupId>org.owasp</groupId>
+        <artifactId>dependency-check-maven</artifactId>
+        <version>8.3.1</version>
+    </dependency>    
   </dependencies>
 
   <build>
@@ -223,6 +228,18 @@
           <failOnNoGitDirectory>false</failOnNoGitDirectory>
           <failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.owasp</groupId>
+        <artifactId>dependency-check-maven</artifactId>
+        <version>8.3.1</version>
+        <executions>
+            <execution>
+                <goals>
+                    <goal>check</goal>
+                </goals>
+            </execution>
+        </executions>
       </plugin>
 
     </plugins>
