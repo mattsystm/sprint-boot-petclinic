@@ -9,6 +9,7 @@ inputs:
 
 runs:
   using: 'composite'
+
   steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -19,7 +20,9 @@ runs:
         java-version: '1.8'
 
     - name: Build
+      shell: bash
       run: mvn -f ${{ inputs.pom-file-path }} clean compile
 
     - name: Test
+      shell: bash
       run: mvn -f ${{ inputs.pom-file-path }} test
