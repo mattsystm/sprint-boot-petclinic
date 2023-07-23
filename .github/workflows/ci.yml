@@ -13,7 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Run Composite Action
-        uses: ./.github/actions/composite-action
-        with:
-          pom-file-path: './pom.xml'
+        - name: Checkout code
+          uses: actions/checkout@v2
+  
+        - name: Run Composite Action
+          uses: ./.github/actions/composite-action
+          with:
+            pom-file-path: './pom.xml'
