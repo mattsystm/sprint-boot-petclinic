@@ -17,6 +17,6 @@ jobs:
           uses: actions/checkout@v2
   
         - name: Run Composite Action
-          uses: ./.github/actions/composite-action.yml
+          uses: ./.github/actions/composite-action
           with:
             pom-file-path: './pom.xml'
